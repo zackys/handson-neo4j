@@ -38,6 +38,7 @@ public class User extends Entity {
     @Property
     private String userId;
 
+    @Index
     @Property
     private String name;
 

@@ -13,6 +13,6 @@
   </root>
 
   <logger name="org.neo4j.ogm" level="WARN" />
-  <logger name="xenlon" level="INFO" />
+  <logger name="zackys.neo4j.handson01.mail" level="DEBUG" />
 
 </configuration>

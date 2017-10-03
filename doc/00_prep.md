@@ -74,6 +74,3 @@ Enterprise版とCommunity版がありますが、Community版をインストー�
 
 プロジェクト直下の「sample01」をMavenプロジェクトとして、開発環境へインストールして下さい。
 
-### Eclipse
-
-### IntelliJ
