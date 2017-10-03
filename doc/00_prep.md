@@ -58,6 +58,10 @@ Enterprise版とCommunity版がありますが、Community版をインストー�
 
 以下のプロジェクトをローカルへcloneして下さい。
 
+https://github.com/zackys/handson-neo4j
+
+※最終版は2017/10/6(金)にアップロード予定です。
+
 このプロジェクトには、以下のものが含まれます。
 
 * sample01
