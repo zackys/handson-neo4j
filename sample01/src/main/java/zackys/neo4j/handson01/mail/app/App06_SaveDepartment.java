@@ -1,17 +1,19 @@
 package zackys.neo4j.handson01.mail.app;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.transaction.Transaction;
 
+import zackys.neo4j.handson01.mail.model.Dpt;
 import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 
 /**
- * クエリの実行（パラメータ・戻り値なし）
+ * ハンズオン
  *
  */
-public class App02_ExecuteQuery1 {
+public class App06_SaveDepartment {
 
     public static void main(String[] args) {
         execute();
@@ -21,8 +23,15 @@ public class App02_ExecuteQuery1 {
         Session session = Neo4jSessionFactory.getInstance().getNeo4jSession();
 
         try(Transaction tx = session.beginTransaction()) {
+            List<Dpt> users = new ArrayList<Dpt>() {
+                {
+                    this.add(new Dpt("Dpt. 1"));
+                    this.add(new Dpt("Dpt. 2"));
+                    this.add(new Dpt("Dpt. 3"));
+                }
+            };
 
-            session.query("MATCH (n) DETACH DELETE n", Collections.emptyMap());
+            users.stream().forEach(session::save);
 
             tx.commit();
         }

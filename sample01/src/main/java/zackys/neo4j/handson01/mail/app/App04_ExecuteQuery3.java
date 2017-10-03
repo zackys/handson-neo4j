@@ -1,6 +1,6 @@
 package zackys.neo4j.handson01.mail.app;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -11,10 +11,10 @@ import org.neo4j.ogm.transaction.Transaction;
 import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 
 /**
- * クエリの実行（パラメータなし）
+ * クエリの実行（パラメータあり）
  *
  */
-public class App03_ExecuteQuery2 {
+public class App04_ExecuteQuery3 {
 
     public static void main(String[] args) {
         execute();
@@ -25,7 +25,9 @@ public class App03_ExecuteQuery2 {
 
         try(Transaction tx = session.beginTransaction()) {
 
-            Result res = session.query("MATCH (n) RETURN n", Collections.emptyMap());
+            Map<String, String> param = new HashMap<>();
+            param.put("value", "AAA");
+            Result res = session.query("MATCH (n:User {name:{value}}) RETURN n", param);
 
             Iterator<Map<String, Object>> itr = res.iterator();
             while(itr.hasNext()) {
@@ -34,14 +36,6 @@ public class App03_ExecuteQuery2 {
 
                 System.out.println(obj);
             }
-
-            /*
-            res.forEach(line -> {
-                Object obj = line.get("n");
-
-                System.out.println(obj);
-            });
-            */
         }
     }
 

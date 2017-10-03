@@ -1,14 +1,16 @@
 package zackys.neo4j.handson01.mail.model;
 
 import org.neo4j.ogm.annotation.Index;
+import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
 import org.neo4j.ogm.annotation.Relationship;
 import org.neo4j.ogm.annotation.Transient;
 
+@NodeEntity(label="User")
 public class User extends Entity {
 
     /**
-     * デフォルトコンストラクタは必要
+     * publicなデフォルトコンストラクタは必須
      */
     public User() {
     }
@@ -16,10 +18,10 @@ public class User extends Entity {
     /**
      * アプリで使用
      *
-     * @param userId
-     * @param name
-     * @param address
-     * @param age
+     * @param userId ユーザーID
+     * @param name ユーザー名
+     * @param address メールアドレス
+     * @param age 年齢
      */
     public User(String userId, String name, String address, int age) {
         super();
@@ -29,28 +31,30 @@ public class User extends Entity {
         this.age = age;
     }
 
-
     // -------------------- //
     // プロパティ
 
+    @Index(unique=true, primary=true)
     @Property
-    String userId;
+    private String userId;
 
     @Property
-    String name;
+    private String name;
 
-    @Index(unique=true) // ★コメントアウト→はずす
+    @Index(unique=true)
     @Property
-    String address;
+    private String address;
 
     @Transient
-    int age;
+    private int age;
 
     // -------------------- //
     // 関係
 
-    @Relationship(type="BELONG_TO") // ★コメントアウト→はずす
-    Dpt dpt;
+    @Relationship(type="BELONG_TO")
+    private Dpt dpt;
+
+    // -------------------- //
 
     public void setDpt(Dpt dpt) {
         this.dpt = dpt;
@@ -59,8 +63,6 @@ public class User extends Entity {
     public String getUserId() {
         return userId;
     }
-
-
 
     @Override
     public String toString() {
