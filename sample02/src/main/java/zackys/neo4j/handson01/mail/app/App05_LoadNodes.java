@@ -23,6 +23,8 @@ public class App05_LoadNodes {
 
     /**
      * 検索結果が１or０件の場合、Session#queryForObject()が使える
+     * （実行時、検索結果が複数あるとRuntimeExceptionを送出する）
+     * →検索結果をIteratorでまわす必要なし
      */
     public static void execute1() {
         System.out.println("## ex1 ##");
@@ -40,7 +42,8 @@ public class App05_LoadNodes {
     /**
      * @Index(unique=true, primary=true)が付与されたプロパティの場合、
      * T Session#load(Class<T> type, U u)
-     * が使える
+     * が使える。
+     * →検索結果をIteratorでまわす必要なし
      */
     public static void execute2() {
         System.out.println("## ex2 ##");
