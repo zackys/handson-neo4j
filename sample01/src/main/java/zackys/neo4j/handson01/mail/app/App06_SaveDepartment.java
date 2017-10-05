@@ -23,7 +23,11 @@ public class App06_SaveDepartment {
         Session session = Neo4jSessionFactory.getInstance().getNeo4jSession();
 
         try(Transaction tx = session.beginTransaction()) {
-            List<Dpt> users = new ArrayList<Dpt>() {
+
+            // :Departmentをすべて消してやり直したい場合
+            //session.deleteAll(Dpt.class);
+
+            List<Dpt> dpts = new ArrayList<Dpt>() {
                 {
                     this.add(new Dpt("Dpt. 1"));
                     this.add(new Dpt("Dpt. 2"));
@@ -31,7 +35,7 @@ public class App06_SaveDepartment {
                 }
             };
 
-            users.stream().forEach(session::save);
+            dpts.stream().forEach(session::save);
 
             tx.commit();
         }

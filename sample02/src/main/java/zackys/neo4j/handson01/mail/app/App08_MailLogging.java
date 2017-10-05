@@ -30,7 +30,8 @@ public class App08_MailLogging {
 
         try (Transaction tx = session.beginTransaction()) {
 
-            session.deleteAll(Email.class);
+            // :Emailを全部消してやり直したい場合
+            //session.deleteAll(Email.class);
 
             Queue<MailData> queue = new ArrayDeque<MailData>() {
                 {
