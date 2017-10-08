@@ -17,8 +17,8 @@ public class Dpt extends Entity {
         this.name = name;
     }
 
-    @Property
-    String name;
+    @Property(name="name")
+    private String name;
 
     public String getName() {
         return name;

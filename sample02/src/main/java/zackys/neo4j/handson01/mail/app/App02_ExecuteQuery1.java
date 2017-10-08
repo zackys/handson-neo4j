@@ -8,8 +8,14 @@ import org.neo4j.ogm.transaction.Transaction;
 import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 
 /**
- * クエリの実行（パラメータ・戻り値なし）
+ * Cypherクエリの実行（パラメータ・戻り値なし）
  *
+ * <ol>
+ * <li>ソースコードを確認する
+ * <li>アプリケーションを実行する
+ * <li>Neo4j Browserで「MATCH (n) RETURN n」を実行する。
+ *     実行したクエリの通り、Nodeがすべて削除されていることを確認する
+ * </ol>
  */
 public class App02_ExecuteQuery1 {
 
@@ -22,6 +28,8 @@ public class App02_ExecuteQuery1 {
 
         try(Transaction tx = session.beginTransaction()) {
 
+            // ★Cypherクエリを実行するには、Session#query()を使用する
+            // 第二引数の"パラメータ"は今回は不要なためめ、Collections.emptyMap()を渡す
             session.query("MATCH (n) DETACH DELETE n", Collections.emptyMap());
 
             tx.commit();
