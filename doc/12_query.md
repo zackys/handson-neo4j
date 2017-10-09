@@ -73,7 +73,7 @@ MATCH (n:Person) RETURN n
 ```
 4.
 ```
-MATCH (n:Person) RETURN n.name, n:age, n.job
+MATCH (n:Person) RETURN n.name, n.age, n.job
 ```
 5.
 ```
