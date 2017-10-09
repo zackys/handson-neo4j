@@ -18,6 +18,13 @@ import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 /**
  * ハンズオン
  *
+ * queueにある"メールデータ"からEmailクラスのインスタンスを生成し、Neo4jへ登録するアプリケーションを完成させてください。
+ *
+ * Emailクラスの実装
+ * <ul>
+ * <li>
+ * <li>
+ * </ul>
  */
 public class App08_MailLogging {
 

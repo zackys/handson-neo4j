@@ -44,7 +44,7 @@ public class User extends Entity {
     private String name;
 
     @Index(unique=true)
-    @Property(name="addr")
+    @Property(name="address")
     private String address;
 
     @Transient

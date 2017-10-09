@@ -12,6 +12,11 @@ import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 /**
  * 特定Nodeの読み込み
  *
+ * <ol>
+ * <li>ソースコードを確認する
+ * <li>アプリケーションを実行する
+ * <li>標準出力に検索結果が表示されることを確認する
+ * </ol>
  */
 public class App05_LoadNodes {
 

@@ -8,7 +8,6 @@ import org.neo4j.ogm.model.Result;
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.transaction.Transaction;
 
-import zackys.neo4j.handson01.mail.model.User;
 import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 
 /**
@@ -44,7 +43,7 @@ public class App03_ExecuteQuery2 {
                 Map<String, Object> line = itr.next();
 
                 // 結果のうち、RETURN n の部分を取得
-                User user = (User)line.get("n");
+                Object user = line.get("n");
                 System.out.println(user);
 
                 // 結果のうち、RETURN n.name の部分を取得

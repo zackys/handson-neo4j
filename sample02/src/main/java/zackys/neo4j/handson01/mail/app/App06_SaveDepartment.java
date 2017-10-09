@@ -15,10 +15,10 @@ import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
  * 以下のアプリケーションを実行して部門Nodeが登録できるよう、Dptクラスの実装を完成させて下さい。<br>
  * 条件は以下の通りです。
  *
- * <ol>
+ * <ul>
  * <li>部門NodeのLableは:Department
  * <li>部門Nodeのプロパティはnameのみ
- * </ol>
+ * </ul>
  */
 public class App06_SaveDepartment {
 

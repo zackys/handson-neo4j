@@ -16,7 +16,7 @@ import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
  * <ol>
  * <li>ソースコードを確認する
  * <li>アプリケーションを実行する
- * <li>Neo4j Browserで「MATCH (n) RETURN n」を実行
+ * <li>標準出力に検索結果が表示されることを確認する
  * </ol>
  *
  */
@@ -41,9 +41,9 @@ public class App04_ExecuteQuery3 {
             Iterator<Map<String, Object>> itr = res.iterator();
             while(itr.hasNext()) {
                 Map<String, Object> line = itr.next();
-                Object obj = line.get("n");
+                Object user = line.get("n");
 
-                System.out.println(obj);
+                System.out.println(user);
             }
         }
     }
