@@ -86,13 +86,13 @@ MATCH (n:Person {age:32}) RETURN n.name AS name
 
 ### p33
 
-5.
+6.
 ```
 MATCH (n:Person)
  WHERE n.age = 32
  RETURN n.name AS name, n.age AS age
 ```
-6.
+7.
 ```
 MATCH (n:Person)
  WHERE n.age > 40
@@ -103,15 +103,15 @@ MATCH (n:Person)
 
 ## ステートメント - CREATE（２）
 
-### p36
+### p35
 
-7.
+8.
 ```
 CREATE (:Person {name:"香川", age:28})
           -[:MEMBER_OF]->
        (:Team {name:"ドルトムント"})
 ```
-8.
+9.
 ```
 MATCH (x:Person {name:"長友"}),
       (y:Person {name:"平"})
@@ -122,9 +122,9 @@ MATCH (x:Person {name:"長友"}),
 
 ## ステートメント - CREATE（３）
 
-### p37
+### p36
 
-9.
+10.
 ```
 MATCH (nagatomo:Person {name:"長友"}),
       (taira:Person {name:"平"}),
@@ -144,15 +144,15 @@ CREATE (gagl)-[:MEMBER_OF {since:2017}]->(intel)
 
 ## ステートメント - SET
 
-### p38
+### p37
 
-10.
+11.
 ```
 MATCH (n:Person {name:"香川"})
  SET n.from = "兵庫"
 ```
 
-11.
+12.
 ```
 MATCH (n:Person {name:"香川"})
  SET n.from = "神戸"
@@ -161,9 +161,9 @@ MATCH (n:Person {name:"香川"})
 
 ## ステートメント - REMOVE
 
-### p39
+### p38
 
-12.
+13.
 ```
 MATCH (n:Person {name:"香川"})
  REMOVE n.from
@@ -173,16 +173,16 @@ MATCH (n:Person {name:"香川"})
 
 ## ステートメント - DELETE
 
-### p40
+### p39
 
-13.
+14.
 ```
 MATCH (x:Person {name:"香川"})-[r]->
       (y:Team {name:"ドルトムント"})
  DELETE r
 ```
 
-14.
+15.
 ```
 MATCH (n:Person {name:"香川"})
  DELETE n
@@ -192,9 +192,9 @@ MATCH (n:Person {name:"香川"})
 
 ## DELETE時の注意事項
 
-### p41
+### p40
 
-15.
+16.
 ```
 MATCH (n:Team {name:"ドルトムント"})
  DETACH DELETE n
@@ -204,9 +204,9 @@ MATCH (n:Team {name:"ドルトムント"})
 
 ## パスを使って検索する（１）
 
-### p48
+### p47
 
-16.
+17.
 ```
 MATCH (:Person {name:"長友"})-[:MARRIED]-(n)
  RETURN n.name
@@ -216,16 +216,16 @@ MATCH (:Person {name:"長友"})-[:MARRIED]-(n)
 
 ## パスを使って検索する（２）
 
-### p49
+### p48
 
-17.
+18.
 ```
 MATCH (:Person {name:"長友"})-[:MEMBER_OF]->
     (:Team)<-[:MEMBER_OF]-(n)
   RETURN n.name
 ```
 
-18.
+19.
 ```
 MATCH (:Person {name:"長友"})-[:MEMBER_OF]->
     (:Team {name:"日本代表"})<-[:MEMBER_OF]-(n)
@@ -238,11 +238,11 @@ MATCH (:Person {name:"長友"})-[:MEMBER_OF]->
 
 ## 次章で使うデータのアップロード
 
-### p62
+### p61
 
 データを全削除（MATCH (n) DETACH DELETE n）してから実行
 
-19.
+20.
 ```
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/zackys/handson-neo4j/master/import/social/Person.csv" AS line
 CREATE (:Person {personId:line.id, name:line.name, age:line.age})
@@ -257,7 +257,7 @@ LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/zackys/handson-neo
 CREATE (:Interest {interestId:line.id, name:line.name})
 ```
 
-20.
+21.
 ```
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/zackys/handson-neo4j/master/import/social/WORKS_FOR.csv" AS line
 MATCH (n1:Person {personId:line.personId}), (n2:Company {companyId:line.companyId})
