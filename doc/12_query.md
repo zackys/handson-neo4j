@@ -53,7 +53,7 @@ CREATE (:Person {name:"本田", age:31})
 CREATE (:Person {name:"三瓶", age:41, job:"芸人"})
 CREATE (:Person {name:"ガリアルディーニ", age:23})
 CREATE (:Team {name:"インテル"})
-CREATE (:Team {name:"日本代表"});
+CREATE (:Team {name:"日本代表"})
 ```
  クエリ実行後、お気に入りへ登録した「MATCH (n) RETURN n」を実行してNodeの登録を確認する
 
@@ -281,7 +281,7 @@ CREATE (n1)-[:INTERESTED_IN]->(n2)
 
 ## ①パスの検索
 
-### p73
+### p72
 
 ```
 MATCH p=(i:Interest)<--(n:Person) RETURN p
@@ -297,7 +297,7 @@ MATCH (i:Interest)<--(n:Person)
 
 ## 集約関数 - COLLECT
 
-### p74
+### p73
 
 2.
 ```
@@ -315,7 +315,7 @@ MATCH (i:Interest)<--(n:Person)
 
 ## 集約関数 - COUNT
 
-### p75
+### p74
 
 4.
 ```
@@ -333,7 +333,7 @@ MATCH (i:Interest)<--(n:Person)
 
 ## ②"趣味"ごとにパス数を集計
 
-### p76
+### p75
 
 6.
 ```
@@ -345,7 +345,7 @@ MATCH (i:Interest)<--(n:Person)
 
 ## ORDER BY 句
 
-### p77
+### p76
 
 7.
 ```
@@ -365,7 +365,7 @@ MATCH (i:Interest)<--(n:Person)
 
 ## LIMIT 句
 
-### p78
+### p77
 
 9.
 ```
@@ -379,7 +379,7 @@ MATCH (i:Interest)<--(n:Person)
 
 ## WITH 句を使い、クエリを整理
 
-### p79
+### p78
 
 10.
 ```
