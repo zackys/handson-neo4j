@@ -20,7 +20,7 @@ import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
  *
  * queueにある"メールデータ"からEmailクラスのインスタンスを生成し、Neo4jへ登録するアプリケーションを完成させてください。
  *
- * Emailクラスの実装
+ * <h3>Emailクラスの実装</h3>
  * <ul>
  * <li>ドメインモデルに従い実装する
  * <li>mailIdはLong型とし、1からカウントアップしていくものとする（今回は排他制御は考えない）
@@ -28,7 +28,7 @@ import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
  * <li>Email#toは、Set<User>型を使う
  * </ul>
  *
- * App08_MailLogging実装のヒント
+ * <h3>App08_MailLogging実装のヒント</h3>
  * queueのあるMailDataを順番に読み取り、
  * <ul>
  * <li>formに当たるNodeを読み込む

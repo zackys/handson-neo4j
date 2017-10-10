@@ -40,16 +40,16 @@ public class Email extends Entity {
     @Property(name="mailId")
     private long mailId;
 
-    @Property(name="subject")
+    @Property(name="title")
     private String title;
 
     // -------------------- //
     // 関係
 
-    @Relationship(type="FROM")
+    @Relationship(type="SENT_BY")
     private User from;
 
-    @Relationship(type="TO")
+    @Relationship(type="SENT_TO")
     private Set<User> to = new HashSet<>();
 
 
