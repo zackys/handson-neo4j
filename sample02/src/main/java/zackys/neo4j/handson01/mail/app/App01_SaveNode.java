@@ -9,7 +9,6 @@ import org.neo4j.ogm.transaction.Transaction;
 import zackys.neo4j.handson01.mail.model.User;
 import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 
-
 /**
  * Nodeの保存・更新
  *

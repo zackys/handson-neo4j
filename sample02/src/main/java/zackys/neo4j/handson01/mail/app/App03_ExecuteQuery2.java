@@ -14,6 +14,7 @@ import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
  * Cypherクエリの実行（パラメータなし・戻り値あり）
  *
  * <ol>
+ * <li>（App02_ExecuteQuery1を実行直後でNodeが未登録の場合、もう一度App01_SaveNodeを実行する）
  * <li>ソースコードを確認する
  * <li>アプリケーションを実行する
  * <li>標準出力に検索結果が表示されることを確認する
