@@ -53,7 +53,7 @@ CREATE (:Person {name:"本田", age:31})
 CREATE (:Person {name:"三瓶", age:41, job:"芸人"})
 CREATE (:Person {name:"ガリアルディーニ", age:23})
 CREATE (:Team {name:"インテル"})
-CREATE (:Team {name:"日本代表"});
+CREATE (:Team {name:"日本代表"})
 ```
  クエリ実行後、お気に入りへ登録した「MATCH (n) RETURN n」を実行してNodeの登録を確認する
 
