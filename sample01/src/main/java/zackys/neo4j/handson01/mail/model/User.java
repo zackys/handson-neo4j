@@ -1,5 +1,6 @@
 package zackys.neo4j.handson01.mail.model;
 
+import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.Index;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Property;
@@ -34,16 +35,16 @@ public class User extends Entity {
     // -------------------- //
     // プロパティ
 
-    @Index(unique=true, primary=true)
-    @Property
+    @Id
+    @Property(name="userId")
     private String userId;
 
     @Index
-    @Property
+    @Property(name="name")
     private String name;
 
     @Index(unique=true)
-    @Property
+    @Property(name="address")
     private String address;
 
     @Transient

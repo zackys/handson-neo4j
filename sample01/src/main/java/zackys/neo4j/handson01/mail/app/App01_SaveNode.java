@@ -9,10 +9,15 @@ import org.neo4j.ogm.transaction.Transaction;
 import zackys.neo4j.handson01.mail.model.User;
 import zackys.neo4j.handson01.mail.neo4j.ogm.session.Neo4jSessionFactory;
 
-
 /**
  * Nodeの保存・更新
  *
+ * <ol>
+ * <li>ソースコードを確認する
+ * <li>アプリケーションを実行する
+ * <li>Neo4j Browserで「MATCH (n) RETURN n」を実行する。
+ *     ソースコードの通りに:UserがDBへ登録されていることを確認する
+ * </ol>
  */
 public class App01_SaveNode {
 
@@ -37,20 +42,20 @@ public class App01_SaveNode {
             };
 
             // ①
-            users.stream().forEach(session::save);
-
-            // or
-
-            // ②
             for (User user: users) {
+                // ★保存・更新にはSession#save()を使用する
                 session.save(user);
             }
+
+            //or
+
+            // ②
+            users.stream().forEach(session::save);
 
             tx.commit();
 
             // ２回保存しているが、インスタンスは同一なので、生成（保存）されるNodeは重複しないことに注意
 
-            // このアプリをもう一度実行しても、userIdの一意性によりUserの重複登録は生じない
         }
     }
 

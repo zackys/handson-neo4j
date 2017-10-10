@@ -1,6 +1,7 @@
 package zackys.neo4j.handson01.mail.model;
 
-import org.neo4j.ogm.annotation.GraphId;
+import org.neo4j.ogm.annotation.GeneratedValue;
+import org.neo4j.ogm.annotation.Id;
 
 /**
  *
@@ -9,9 +10,9 @@ import org.neo4j.ogm.annotation.GraphId;
 abstract class Entity {
 
     /**
-     * 変数名がidであれば、@GraphIdは無くてもOK
+     * 変数名がidであれば、「@Id @GeneratedValue」は無くてもOK
      */
-    @GraphId
+    @Id @GeneratedValue
     private Long id;
 
     public Long getId() {
