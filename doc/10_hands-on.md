@@ -334,6 +334,7 @@ CREATE (n1)-[:INTERESTED_IN]->(n2)
 
 (3)「Benと同じプロジェクトで働く人は？」
 
+[解答例](https://github.com/zackys/handson-neo4j/blob/master/doc/21_WarmUp.md)
 ---
 
 ## ①パスの検索
@@ -470,5 +471,7 @@ MATCH (n
 ```
 
 参考：[11_CheatSheet.pdf](https://github.com/zackys/handson-neo4j/blob/master/doc/11_CheatSheet.pdf)
+
+[解答例](https://github.com/zackys/handson-neo4j/blob/master/doc/22_CoworkerWithSameInterests.md)
 
 
