@@ -25,5 +25,6 @@ MATCH (n)-[:INTERESTED_IN]->(i)<-[:INTERESTED_IN]-(x),
   RETURN name, COUNT(intr) AS rank, COLLECT(intr)
 
 ```
+* 最後の`COLLECT(intr)`は分かりやすくするために追加しましたが、なくてもOKです。
 
 ---
