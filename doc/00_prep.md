@@ -27,6 +27,16 @@
 
 Enterprise版とCommunity版がありますが、Community版をインストールして下さい。
 
+=【2017/10/26 追記】==============================
+
+#### ダウンロード・ページについて
+オンラインドキュメントで案内されているリンク（https://neo4j.com/download/） の代わりに、<br>
+以下のリンク先ページからCommunity版をダウンロードして下さい。
+
+https://neo4j.com/download/other-releases/
+
+===============================================
+
 以下のオンラインドキュメントに従い、インストールして下さい：
 
 * Linux: https://neo4j.com/docs/operations-manual/current/installation/linux/tarball/
